@@ -1,0 +1,69 @@
+<%- include('header.ejs') %>
+<div class="carousel slide" data-bs-ride="carousel" id="a">
+
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#a" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#a" data-bs-slide-to="1" ></button>
+      <button type="button" data-bs-target="#a" data-bs-slide-to="2" ></button>
+    </div>
+    
+    
+    
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <div class="banner-box">
+
+                <img src="/images/A.jpg" class="w-100" height="800px" alt="...">
+            </div>
+      </div>0
+  
+      <div class="carousel-item" data-bs-interval="2000">
+            <div class="banner-box">
+                <img src="/images/A.webp" class="w-100" height="800px" alt="...">
+            </div>
+      </div>1
+  
+      <div class="carousel-item" data-bs-interval="2000">
+        <div class="banner-box">
+            <img src="/images/d.jpg" class="w-100" height="800px" alt="...">
+        </div>
+  </div>2
+    </div>  
+        
+        
+    <button class="carousel-control-prev" type="button" data-bs-target="#a" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+  
+    <button class="carousel-control-next" type="button" data-bs-target="#a" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div><!--carousel end-->
+
+<section class="featured-blog mtb-40">
+    <div class="container">
+        <div class="row">
+            <h1 class="mt-4 text-center title">Featured Blog</h1>
+
+            <% d.forEach((item)=>{ %> 
+            <div class="col-md-4" style=" padding: auto;  ">
+                <div class="blog-box">
+                    <img src="<%= item.image.url %>" width="100%" height="300px"  alt="">
+                     
+                    <h3> <%= item.title %></h3>
+                    <p><%= item.createdAt.toLocaleDateString() %></p>
+                    <p><%= item.description.slice(0,200) %> </p>
+                    <a href="/blogdetail/<%= item._id %>" class="btn" style="background-color: #222; color: white; width: 100%;">Read more...</a>
+                </div>
+
+            </div>
+            <%})%> 
+        </div>
+    </div>
+
+    
+
+</section>
+
+
+<%- include('footer.ejs')%>

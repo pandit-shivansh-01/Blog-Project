@@ -1,0 +1,16 @@
+<%- include('header.ejs')%>
+
+    <div class="container-fluid about">
+      <br><br><br><br>
+      <div class="container">
+      <h1 style="color: white;">About</h1>
+      <% d.forEach((item)=>{ %>   
+      <div class="page-desc">
+        <p style="color: white;"><%= item.description %></p>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br>
+    </div>
+    <%})%> 
+
+<%- include('footer.ejs')%>
