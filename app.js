@@ -1,10 +1,9 @@
 const express = require('express')
-
 const connectDB=require('./db/connect_db')
 const cloudinary = require('cloudinary')
 var session = require('express-session')
 var flash = require('connect-flash');
-const router= require('./routes/web')
+
 const app=express()
 const port =3000
 //body parser 
@@ -14,9 +13,10 @@ const cookieParser = require('cookie-parser')
 app.use(cookieParser())
 app.use(express.urlencoded({extended:false}))
 
+
 // file uploader
 const fileUpload = require("express-fileupload");
-
+const router= require('./routes/web')
 const { Router } = require('express')
 app.use(fileUpload({useTempFiles: true}));
 //session and flash use 
